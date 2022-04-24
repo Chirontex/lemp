@@ -143,5 +143,5 @@ ENTRYPOINT service nginx start \
     && tail -F /var/log/container.log
 
 EXPOSE 80
-EXPOSE 5432
+EXPOSE 3306
 EXPOSE 9003
