@@ -68,6 +68,8 @@ RUN apt-get install -y php-mf2
 RUN apt-get install -y php-zip
 RUN apt-get install -y php-json
 
+RUN apt-get update
+
 RUN apt-get install -y php-mongo
 RUN apt-get install -y php-mcrypt
 RUN apt-get install -y php-mongodb
