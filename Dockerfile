@@ -140,6 +140,7 @@ y" > /mysql_secure_installation_answers.txt
 ENTRYPOINT service nginx start \
     && service mysql start \
     && mysql_secure_installation < /mysql_secure_installation_answers.txt \
+    && rm mysql_secure_installation_answers.txt \
     && tail -F /var/log/container.log
 
 EXPOSE 80
