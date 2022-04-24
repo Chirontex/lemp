@@ -24,7 +24,7 @@ RUN rm -rf /tmp/tmzns
 RUN apt-get install -y mc \
     nginx
 
-RUN apt-get install -y mariadb-server-10.3 mariadb-client-10.3
+RUN apt-get install -y mariadb-server-10.6 mariadb-client-10.6
 
 RUN apt-get install -y software-properties-common && add-apt-repository ppa:ondrej/php
 RUN apt-get update
