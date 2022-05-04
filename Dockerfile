@@ -103,6 +103,7 @@ RUN apt-get install -y php-uploadprogress
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN apt-get install -y nodejs \
+    npm \
     yarnpkg
 
 RUN echo "short_open_tag = On\n\
