@@ -102,9 +102,10 @@ RUN apt-get install -y php-uploadprogress
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN apt-get install -y nodejs \
-    npm \
-    yarnpkg
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+    apt-get install -y nodejs
+
+RUN npm install --global yarn
 
 RUN echo "short_open_tag = On\n\
 max_execution_time = 60\n\
