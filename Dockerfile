@@ -32,7 +32,8 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y php7.4 php7.4-fpm php7.4-cli \
     php8.0 php8.0-fpm php8.0-cli \
-    php8.1 php8.1-fpm php8.1-cli
+    php8.1 php8.1-fpm php8.1-cli \
+    php8.2 php8.2-fpm php8.2-cli
 
 RUN apt-get update
 
@@ -48,6 +49,7 @@ RUN apt-get update
 RUN apt-get install -y php7.4-curl
 RUN apt-get install -y php8.0-curl
 RUN apt-get install -y php8.1-curl
+RUN apt-get install -y php8.2-curl
 RUN apt-get install -y php-date
 RUN apt-get install -y php-db
 RUN apt-get install -y php-dev
@@ -58,7 +60,7 @@ RUN apt-get install -y php-grpc
 RUN apt-get install -y php-imagick
 RUN apt-get install -y php-intl
 RUN apt-get install -y php-ldap
-RUN apt-get install -y php-mcrypt
+RUN apt-get install -y php-mcrypt-all-dev
 RUN apt-get install -y php-memcache
 
 RUN apt-get update
@@ -68,7 +70,6 @@ RUN apt-get install -y php-mf2
 RUN apt-get install -y php-zip
 RUN apt-get install -y php-json
 
-RUN apt-get install -y php-mcrypt
 RUN apt-get install -y php-mongodb
 RUN apt-get install -y php-odbc
 RUN apt-get install -y php-pclzip
@@ -79,6 +80,7 @@ RUN apt-get install -y php-pgsql
 RUN apt-get install -y php7.4-pgsql
 RUN apt-get install -y php8.0-pgsql
 RUN apt-get install -y php8.1-pgsql
+RUN apt-get install -y php8.2-pgsql
 
 RUN apt-get install -y php-sodium
 RUN apt-get install -y php-redis
@@ -90,6 +92,7 @@ RUN apt-get install -y php-mysql
 RUN apt-get install -y php7.4-mysql
 RUN apt-get install -y php8.0-mysql
 RUN apt-get install -y php8.1-mysql
+RUN apt-get install -y php8.2-mysql
 
 RUN apt-get update
 
@@ -130,6 +133,10 @@ RUN ln -sf /etc/php/8.0/mods-available/custom-config.ini /etc/php/8.0/cli/conf.d
 RUN ln -sf /etc/php/custom-config.ini /etc/php/8.1/mods-available/custom-config.ini
 RUN ln -sf /etc/php/8.1/mods-available/custom-config.ini /etc/php/8.1/fpm/conf.d/100-custom-config.ini
 RUN ln -sf /etc/php/8.1/mods-available/custom-config.ini /etc/php/8.1/cli/conf.d/100-custom-config.ini
+
+RUN ln -sf /etc/php/custom-config.ini /etc/php/8.2/mods-available/custom-config.ini
+RUN ln -sf /etc/php/8.2/mods-available/custom-config.ini /etc/php/8.2/fpm/conf.d/100-custom-config.ini
+RUN ln -sf /etc/php/8.2/mods-available/custom-config.ini /etc/php/8.2/cli/conf.d/100-custom-config.ini
 
 RUN echo "root\n\
 n\n\
